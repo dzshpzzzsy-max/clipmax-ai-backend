@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: clipmax-ai-backend
+    runtime: docker
+    plan: starter
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: ALLOWED_ORIGINS
+        value: https://clipmax-ai.pages.dev
+      - key: MAX_UPLOAD_MB
+        value: "500"
